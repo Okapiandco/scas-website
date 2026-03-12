@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'About Us',
   description:
     'Learn about the Surrey County Agricultural Society, our mission, and our purpose in promoting agriculture and rural life.',
+  openGraph: {
+    title: 'About Us | Surrey County Agricultural Society',
+    description: 'Our mission and purpose in promoting agriculture, countryside, and rural life across Surrey since 1829.',
+  },
 }
 
 export default function AboutPage() {

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description:
     'Get in touch with the Surrey County Agricultural Society. Find out how to get involved through membership, volunteering, sponsorship, or exhibiting.',
+  openGraph: {
+    title: 'Contact Us | Surrey County Agricultural Society',
+    description: 'Get in touch with the Surrey County Agricultural Society. Membership, volunteering, sponsorship, and exhibiting opportunities.',
+  },
 }
 
 const waysToGetInvolved = [

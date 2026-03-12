@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: 'Our History',
   description:
     'Discover the rich history of the Surrey County Agricultural Society, from its founding societies in 1829 to the present day.',
+  openGraph: {
+    title: 'Our History | Surrey County Agricultural Society',
+    description: 'A journey spanning nearly two centuries of agricultural heritage in Surrey, from 1829 to the present day.',
+  },
 }
 
 const patrons = [

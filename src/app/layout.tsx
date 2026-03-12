@@ -10,10 +10,29 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
+  metadataBase: new URL('https://scas-website-kappa.vercel.app'),
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     siteName: SITE_NAME,
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 600,
+        alt: SITE_NAME,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_NAME,
+    description: SITE_TAGLINE,
+    images: ['/logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

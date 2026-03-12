@@ -1,7 +1,19 @@
+import type { Metadata } from 'next'
 import HeroSection from '@/components/HeroSection'
 import Card from '@/components/Card'
 import Button from '@/components/Button'
 import { SITE_NAME, SITE_TAGLINE } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: 'Surrey County Agricultural Society | Promoting Farming Heritage Since 1829',
+  description:
+    'The Surrey County Agricultural Society promotes agriculture, countryside, and rural life across Surrey. Founded in 1955 from two historic societies dating back to 1829.',
+  openGraph: {
+    title: 'Surrey County Agricultural Society',
+    description:
+      'Promoting farming heritage and community in Surrey since 1829. Membership, sponsorship, and exhibiting opportunities.',
+  },
+}
 
 export default function HomePage() {
   return (

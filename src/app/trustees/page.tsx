@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: 'Our Trustees',
   description:
     'Meet the dedicated trustees who lead and guide the Surrey County Agricultural Society.',
+  openGraph: {
+    title: 'Our Trustees | Surrey County Agricultural Society',
+    description: 'Meet the dedicated leaders who guide the Surrey County Agricultural Society.',
+  },
 }
 
 const trustees = [
