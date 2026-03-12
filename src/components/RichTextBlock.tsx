@@ -74,7 +74,6 @@ export default function RichTextBlock({ content }: RichTextBlockProps) {
 
   return (
     <div className="prose max-w-none">
-      {/* @ts-expect-error PortableText component types */}
       <PortableText value={content} components={components} />
     </div>
   )
