@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 
 export const metadata: Metadata = {
@@ -15,12 +16,20 @@ const trustees = [
   {
     name: 'Angus Stovold',
     position: 'Trustee (Finance)',
+    image: '/Angus%20Stovold.jpeg',
     bio: 'Angus brings over 35 years of experience in family farming to the Society. As finance trustee, he oversees the financial stewardship of the organisation while maintaining a deep commitment to conservation efforts. His extensive knowledge of Surrey agriculture and his multiple leadership roles make him an invaluable member of the board.',
   },
   {
     name: 'Paul Ibbot',
     position: 'Trustee',
+    image: null,
     bio: 'Paul studied agriculture at Wye College before establishing his livestock operation in West Surrey. He manages a flock of Romneys and Southdowns alongside cattle and hay production. His hands-on farming experience and dedication to traditional agricultural practices bring vital practical insight to the Society\'s work.',
+  },
+  {
+    name: 'Bill Biddell',
+    position: 'Trustee',
+    image: '/Bill.jpg',
+    bio: '',
   },
 ]
 
@@ -30,7 +39,8 @@ export default function TrusteesPage() {
       <HeroSection
         title="Our Trustees"
         subtitle="The dedicated leaders who guide the Surrey County Agricultural Society"
-        backgroundImage="/Surrey%20hills.jpg"
+        backgroundImage="/9127.jpg"
+        backgroundPosition="center 15%"
       />
 
       {/* Trustees Grid */}
@@ -48,20 +58,31 @@ export default function TrusteesPage() {
               key={trustee.name}
               className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
             >
-              {/* Photo Placeholder */}
-              <div className="bg-scas-light h-48 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-scas-green/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-scas-green text-3xl font-serif font-bold">
-                      {trustee.name
-                        .split(' ')
-                        .map((n) => n[0])
-                        .join('')}
-                    </span>
-                  </div>
-                  <span className="text-xs text-gray-400">Photo coming soon</span>
+              {/* Photo */}
+              {trustee.image ? (
+                <div className="relative aspect-[3/4] bg-scas-light">
+                  <Image
+                    src={trustee.image}
+                    alt={trustee.name}
+                    fill
+                    className="object-cover object-center"
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className="bg-scas-light h-72 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-20 h-20 bg-scas-green/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                      <span className="text-scas-green text-3xl font-serif font-bold">
+                        {trustee.name
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')}
+                      </span>
+                    </div>
+                    <span className="text-xs text-gray-400">Photo coming soon</span>
+                  </div>
+                </div>
+              )}
 
               {/* Content */}
               <div className="p-6">

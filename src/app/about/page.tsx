@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import Button from '@/components/Button'
 
@@ -18,7 +19,8 @@ export default function AboutPage() {
       <HeroSection
         title="About Us"
         subtitle="Our mission and purpose in promoting agriculture, countryside, and rural life across Surrey"
-        backgroundImage="/Surrey%20hills.jpg"
+        backgroundImage="/Raddery-Endeavour-S191-0856.jpg"
+        backgroundPosition="center 30%"
       />
 
       {/* Main Content */}
@@ -41,11 +43,20 @@ export default function AboutPage() {
             rural community for generations.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Our annual Surrey County Show, held at Stoke Park in Guildford, has
-            grown to become one of the largest and most prestigious one-day
-            agricultural shows in the country, attracting visitors from across
-            the region.
+            Our annual show, held at Stoke Park in Guildford, has grown to
+            become one of the largest and most prestigious one-day agricultural
+            shows in the country, attracting visitors from across the region.
           </p>
+
+          {/* Image Break */}
+          <div className="grid grid-cols-2 gap-4 my-12">
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/0575.jpg" alt="Herd of Aberdeen Angus cattle in rolling Surrey countryside" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/9127.jpg" alt="Members and visitors at a Society agricultural gathering" fill className="object-cover" />
+            </div>
+          </div>
 
           <h2 className="font-serif text-3xl font-bold text-scas-dark mb-6 mt-12">
             Our Purpose

@@ -4,6 +4,7 @@ interface HeroSectionProps {
   children?: React.ReactNode
   backgroundClass?: string
   backgroundImage?: string
+  backgroundPosition?: string
   tall?: boolean
 }
 
@@ -13,6 +14,7 @@ export default function HeroSection({
   children,
   backgroundClass = 'bg-scas-dark',
   backgroundImage,
+  backgroundPosition,
   tall = false,
 }: HeroSectionProps) {
   return (
@@ -23,7 +25,7 @@ export default function HeroSection({
           ? {
               backgroundImage: `url(${backgroundImage})`,
               backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundPosition: backgroundPosition || 'center',
             }
           : undefined
       }

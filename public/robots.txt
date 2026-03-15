@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://surreyagriculturalsociety.co.uk/sitemap.xml

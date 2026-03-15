@@ -21,7 +21,7 @@ const waysToGetInvolved = [
   {
     title: 'Volunteering',
     description:
-      'Help make the Surrey County Show a success. We rely on dedicated volunteers to help with everything from stewarding to hospitality.',
+      'Help make our annual show a success. We rely on dedicated volunteers to help with everything from stewarding to hospitality.',
   },
   {
     title: 'Sponsorship',
@@ -31,7 +31,7 @@ const waysToGetInvolved = [
   {
     title: 'Exhibiting',
     description:
-      'Showcase your livestock, produce, or business at the Surrey County Show. Trade stand and exhibition spaces are available.',
+      'Showcase your livestock, produce, or business at our annual show. Trade stand and exhibition spaces are available.',
   },
 ]
 
@@ -41,6 +41,7 @@ export default function ContactPage() {
       <HeroSection
         title="Get Involved"
         subtitle="Connect with the Surrey County Agricultural Society and become part of our story"
+        backgroundImage="/0575.jpg"
       />
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

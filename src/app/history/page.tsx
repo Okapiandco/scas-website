@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 
 export const metadata: Metadata = {
@@ -37,30 +38,6 @@ const patrons = [
   { year: 1983, name: 'The Rt Hon Margaret Thatcher, Prime Minister' },
 ]
 
-const attractions = [
-  { year: 1961, items: 'Dagenham Girls Pipers, Dick Chipperfield and his Elephants, Doris Archer, TV Sheep Dogs' },
-  { year: 1962, items: 'Massed Bands of the Royal Marines' },
-  { year: 1963, items: 'Musical Drive The King\'s Troop RHA' },
-  { year: 1964, items: 'RAF Falcons, Dick Chipperfield and his Elephants' },
-  { year: 1965, items: 'Musical Ride, Household Cavalry' },
-  { year: 1966, items: 'Musical Drive, King\'s Troop RHA' },
-  { year: 1967, items: 'Musical Ride, Household Cavalry, Band of the Blues and Royals' },
-  { year: 1968, items: 'Doris Archer, Doris Weston, Pram Race' },
-  { year: 1969, items: 'Musical Drive, King\'s Troop RHA' },
-  { year: 1970, items: 'White Helmets, Musical Ride Household Cavalry' },
-  { year: 1971, items: 'RAF Falcons, Red Devils Parachute Team' },
-  { year: 1972, items: 'Doris Weston, Junior Spitfire' },
-  { year: 1973, items: 'Musical Drive, King\'s Troop RHA, RAF Falcons' },
-  { year: 1974, items: 'Musical Ride, Household Cavalry' },
-  { year: 1975, items: 'Musical Drive, King\'s Troop RHA, RAF Falcons' },
-  { year: 1976, items: 'White Helmets, Red Devils Free Fall Parachute Team' },
-  { year: 1977, items: 'Musical Ride, Household Cavalry, Silver Jubilee Parade' },
-  { year: 1978, items: 'Musical Drive, King\'s Troop RHA' },
-  { year: 1979, items: 'RAF Falcons, White Helmets' },
-  { year: 1980, items: 'Musical Drive, King\'s Troop RHA, Red Devils' },
-  { year: 1981, items: 'Musical Ride, Household Cavalry' },
-  { year: 1982, items: 'RAF Falcons, White Helmets, Red Devils' },
-]
 
 export default function HistoryPage() {
   return (
@@ -68,7 +45,7 @@ export default function HistoryPage() {
       <HeroSection
         title="Our History"
         subtitle="A journey spanning nearly two centuries of agricultural heritage in Surrey"
-        backgroundImage="/Surrey-Hills-Area-England.jpg"
+        backgroundImage="/1040.jpg"
       />
 
       {/* Early Foundation */}
@@ -143,6 +120,19 @@ export default function HistoryPage() {
             </p>
           </div>
 
+          {/* Historic Images */}
+          <div className="grid grid-cols-3 gap-4 mb-12">
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/0794.jpg" alt="Green crop field in the Surrey countryside" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/4135.jpg" alt="Aberdeen Angus herd grazing beside a traditional Surrey farmhouse" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/Raddery-Endeavour-S191-0856.jpg" alt="Raddery Endeavour pedigree cattle" fill className="object-cover" />
+            </div>
+          </div>
+
           {/* Guildford */}
           <div className="border-l-4 border-scas-green pl-6 mb-12">
             <span className="text-scas-green font-bold text-sm uppercase tracking-wider">
@@ -195,31 +185,6 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* Main Ring Attractions */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="font-serif text-3xl font-bold text-scas-dark text-center mb-12">
-          Main Ring Attractions Archive
-        </h2>
-        <div className="max-w-3xl mx-auto">
-          <p className="text-gray-600 text-center mb-8">
-            A selection of the spectacular entertainment that has graced the main
-            ring at the Surrey County Show over the years.
-          </p>
-          <div className="space-y-3">
-            {attractions.map((attraction) => (
-              <div
-                key={attraction.year}
-                className="flex items-start gap-4 py-3 border-b border-gray-100 last:border-0"
-              >
-                <span className="text-scas-green font-bold text-lg min-w-[4rem]">
-                  {attraction.year}
-                </span>
-                <span className="text-gray-700">{attraction.items}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   )
 }

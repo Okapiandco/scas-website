@@ -10,14 +10,18 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_TAGLINE,
-  metadataBase: new URL('https://scas-website-kappa.vercel.app'),
+  metadataBase: new URL('https://surreyagriculturalsociety.co.uk'),
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     siteName: SITE_NAME,
     images: [
       {
-        url: '/logo.png',
+        url: '/SCAS%20Logo%20.png',
         width: 800,
         height: 600,
         alt: SITE_NAME,
@@ -28,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE_NAME,
     description: SITE_TAGLINE,
-    images: ['/logo.png'],
+    images: ['/SCAS%20Logo%20.png'],
   },
   robots: {
     index: true,
@@ -43,6 +47,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Surrey County Agricultural Society',
+              url: 'https://surreyagriculturalsociety.co.uk',
+              logo: 'https://surreyagriculturalsociety.co.uk/SCAS%20Logo%20.png',
+              foundingDate: '1955',
+              description:
+                'The Surrey County Agricultural Society promotes agriculture, countryside, and rural life across Surrey. Founded in 1955 from two historic societies dating back to 1829.',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Guildford',
+                addressRegion: 'Surrey',
+                addressCountry: 'GB',
+              },
+              email: 'scas@surreycountyshow.co.uk',
+            }),
+          }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

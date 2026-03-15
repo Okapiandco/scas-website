@@ -21,14 +21,10 @@ export default function Header() {
 
   return (
     <header
-      className="bg-scas-green shadow-sm sticky top-0 z-50 overflow-hidden"
-      style={{
-        height: scrolled ? '64px' : '176px',
-        transition: 'height 0.3s ease',
-      }}
+      className="bg-scas-green shadow-sm sticky top-0 z-50"
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex justify-between items-center h-full">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -36,10 +32,9 @@ export default function Header() {
               alt={SITE_NAME}
               width={480}
               height={192}
-              className="w-auto"
+              className="w-auto transition-all duration-300"
               style={{
-                height: scrolled ? '48px' : '160px',
-                transition: 'height 0.3s ease',
+                height: scrolled ? '48px' : '80px',
               }}
               priority
             />

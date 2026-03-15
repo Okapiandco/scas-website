@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import Card from '@/components/Card'
 import Button from '@/components/Button'
@@ -22,7 +23,7 @@ export default function HomePage() {
       <HeroSection
         title={SITE_NAME}
         subtitle={SITE_TAGLINE}
-        backgroundImage="/Homepage%20Hero.jpg"
+        backgroundImage="/0494.jpg"
         tall
       >
         <div className="flex flex-wrap gap-4">
@@ -49,8 +50,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Image Gallery */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/0794.jpg" alt="Lush green crop field in the Surrey countryside" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+              <Image src="/8733.jpg" alt="Young handler presenting cattle at a livestock show" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-lg overflow-hidden hidden md:block">
+              <Image src="/1040.jpg" alt="Cattle grazing in a Surrey parkland setting" fill className="object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Signpost Cards */}
-      <section className="bg-white py-16">
+      <section className="bg-scas-light py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card
